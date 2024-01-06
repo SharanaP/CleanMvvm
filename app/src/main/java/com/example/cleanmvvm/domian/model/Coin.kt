@@ -1,6 +1,6 @@
 package com.example.cleanmvvm.domian.model
 
-data class CoinList(
+data class Coin(
     val id: String,
     val is_active: Boolean,
     val name: String,

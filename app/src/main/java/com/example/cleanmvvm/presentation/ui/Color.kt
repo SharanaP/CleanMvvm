@@ -1,4 +1,4 @@
-package com.example.cleanmvvm.presentation.theme
+package com.example.cleanmvvm.presentation.ui
 
 import androidx.compose.ui.graphics.Color
 

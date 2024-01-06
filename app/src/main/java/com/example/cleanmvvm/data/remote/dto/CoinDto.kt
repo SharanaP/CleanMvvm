@@ -1,8 +1,8 @@
 package com.example.cleanmvvm.data.remote.dto
 
-import com.example.cleanmvvm.domian.model.CoinList
+import com.example.cleanmvvm.domian.model.Coin
 
-data class CoinListDto(
+data class CoinDto(
     val id: String,
     val is_active: Boolean,
     val is_new: Boolean,
@@ -12,6 +12,12 @@ data class CoinListDto(
     val type: String
 )
 
-fun CoinListDto.toCoinList: CoinList() 
-
-)
+fun CoinDto.toCoin(): Coin {
+    return Coin(
+        id = id,
+        is_active = is_active,
+        name = name,
+        rank = rank,
+        symbol = symbol
+    )
+}
