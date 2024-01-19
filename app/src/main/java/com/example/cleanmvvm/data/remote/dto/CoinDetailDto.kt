@@ -1,5 +1,7 @@
 package com.example.cleanmvvm.data.remote.dto
 
+import com.example.cleanmvvm.domian.model.CoinDetail
+
 data class CoinDetailDto(
     val description: String,
     val development_status: String,
@@ -22,7 +24,20 @@ data class CoinDetailDto(
     val started_at: String,
     val symbol: String,
     val tags: List<Tag>,
-    val team: List<Team>,
+    val team: List<TeamMembers>,
     val type: String,
     val whitepaper: Whitepaper
 )
+
+fun CoinDetailDto.toCoinDetail(): CoinDetail {
+    return CoinDetail(
+        id = id,
+        name = name,
+        description = description,
+        symbol = symbol,
+        rank = rank,
+        is_active = is_active,
+        tags = tags.map { it.name },
+        team = team
+    )
+}
